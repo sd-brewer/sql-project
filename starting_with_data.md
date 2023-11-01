@@ -1,8 +1,25 @@
 ### starting_with_data.md
 ---
+
 &nbsp;
 
-# Question 1 : what percentage of unique visitors to the site make a purchase?
+**PURPOSE** 
+
+Develop questions about the data that can be analyzed using SQL queries
+
+&nbsp;
+
+**CONTENTS**
+
+**Exploration 1** : What percentage of unique visitors to the site make a purchase?  
+**Exploration 2** : What are the top channelgroupings for each country?  
+**Exploration 3** : What are the top 10 products based on unique visitor viewings?  
+**Exploration 4** : How many visits did the top 10 unique site visitors make?  
+**Exploration 5** : Do visitors who end up making a purchase spend more time on site?
+
+&nbsp;
+
+## Exploration 1 : What percentage of unique visitors to the site make a purchase?
 
 ### SQL Queries:
 ```SQL
@@ -48,7 +65,7 @@ SELECT * FROM qd1_visitor_conversion_rate;
 
 &nbsp;
 
-# Question 2 : What are the top channelgroupings for each country?
+## Exploration 2 : What are the top channelgroupings for each country?
 
 ### SQL Queries:
 ```SQL
@@ -97,7 +114,7 @@ SELECT * FROM qd2_top_channelgroupings_by_country;
 
 &nbsp;
 
-# Question 3 : What are the top 10 products based on unique visitor viewings?
+## Exploration 3 : What are the top 10 products based on unique visitor viewings?
 
 ### SQL Queries:
 ```SQL
@@ -130,7 +147,7 @@ SELECT * FROM qd3_top_products_by_unique_viewers;
 
 &nbsp;
 
-# Question 4 : How many visits did the top 10 unique site visitors make?
+## Exploration 4 : How many visits did the top 10 unique site visitors make?
 
 ### SQL Queries:
 ```SQL
@@ -159,7 +176,7 @@ SELECT * FROM qd4_top_visitors_by_frequency;
 
 &nbsp;
 
-# Question 5 : Do visitors who end up making a purchase spend more time on site?
+## Exploration 5 : Do visitors who end up making a purchase spend more time on site?
 
 ### SQL Queries:
 ```SQL

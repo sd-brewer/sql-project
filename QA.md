@@ -10,7 +10,7 @@
 
 &nbsp;
 
-# RISK 1 : Revenue values from session_transactions may differ from session_analytics
+## RISK 1 : Revenue values from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 - explore how session_transactions.totaltransactionrevenue differs from session_analytics.revenue
@@ -86,7 +86,7 @@ SELECT * FROM qa1_aggregated_revenue_variance;
 
 &nbsp;
 
-# RISK 2 : Product quantities from session_transactions may differ from session_analytics
+## RISK 2 : Product quantities from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 ```SQL
@@ -120,7 +120,7 @@ SELECT * FROM qa2_productquantity_variance;
 
 &nbsp;
 
-# RISK 3 : Product prices from session_transactions may differ from session_analytics
+## RISK 3 : Product prices from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 ```SQL
@@ -155,7 +155,7 @@ SELECT * FROM qa3_productprice_variance;
 
 &nbsp;
 
-# RISK 4 : Sales quantities from session_transactions may differ from product_sales
+## RISK 4 : Sales quantities from session_transactions may differ from product_sales
 
 ### SQL Queries:
 ```SQL

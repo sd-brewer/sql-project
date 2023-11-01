@@ -2,37 +2,36 @@
 ---
 &nbsp;
 
-**Issues to address with database cleaning:**
+# Ecommerce Database Cleaning Documentation
 
-1. productskus have duplicates
-2. productnames have anomalies
-3. no primary or foreign keys connecting tables
-4. redundant columns and data
-5. no tables containing aggregate product or session data
-6. price and revenue value anomalies
-7. null columns
+### Introduction
+This document details the processes involved in cleaning and updating the ecommerce database originally constructed from .csv files. The project aims to address key issues in the database structure and content, thereby enhancing its efficiency and usability for ecommerce analytics.
+
+#### Primary Issues Addressed in Database Cleaning
+- **Product SKU Duplicates**: Identification and resolution of duplicate product SKUs.
+- **Product Name Anomalies**: Rectification of irregularities in product names.
+- **Key Constraints**: Establishment of primary and foreign key relationships.
+- **Redundant Data**: Elimination of unnecessary columns and redundant data.
+- **Aggregate Data**: Creation of new tables for aggregate product and session data.
+- **Value Anomalies**: Correction of irregularities in price and revenue values.
+- **Null Columns**: Handling of columns with null values.
+
+#### Document Limitations
+- **Non-chronological Process**: The cleaning steps in `clean_data.md` are compiled from various data explorations and might lack chronological flow.
+- **Omitted Exploratory Analysis**: For brevity, the exploratory data analysis informing these decisions is not included, which may affect understanding.
+
+### Cleaning Procss Outline
+1. **SECTION 1 - Cleaning All Sessions Table**: Focus on deduplication and data integrity of session records. Normalize productsku and productname unique to table.
+2. **SECTION 2 - Normalizing and Aggregating Product Data**: Techniques for streamlining and standardizing product information and aggregating key data.
+3. **SECTION 3 - Normalizing ID-Pairs and Related Data**: Strategies for structuring and associating ID-pair data effectively.
+4. **SECTION 4 - Finalizing Table Names and Variables**: Standardization of table naming conventions and variable consistency.
+5. **SECTION 5 - Setting PK and FK Constraints**: Implementation of primary and foreign key constraints for database integrity.
+
+
 
 &nbsp;
 
-**Limitations of this document**
- 
-- the cleaning process shown in clean_data.md was stitched together from various non-chronological data explorations
-- this has resulted in non-linear table iterations that, given more time, should be revised to create a more comprehensible flow
-- the exploratory data analysis that informed these decisions has been omitted for brevity, but this also impacts comprehension
-
-&nbsp;
-
-### Outline:
-
-1. **SECTION 1** - cleaning all_sessions table
-2. **SECTION 2** - normalizing and aggregating product data
-3. **SECTION 3** - normalizing and aggregating id-pairs and associated data
-4. **SECTION 4** - finalizing table names and variables
-5. **SECTION 5** - setting PK and FK constraints
- 
-&nbsp;
-
-# SECTION 1 : Begin cleaning all_sessions (and a bit of analytics)
+## SECTION 1 : Begin cleaning all_sessions (and a bit of analytics)
 ### Purpose
 - all_sessions contains most columns, use to get acquinted with database variables
 
@@ -337,7 +336,7 @@ UPDATE sessions_2
 &nbsp;
 --
 
-# SECTION 2 : normalizing and aggregating product data
+## SECTION 2 : normalizing and aggregating product data
 ### Purpose
 - unifying product data from: all_sessions, products, sales_report
 
@@ -366,7 +365,7 @@ UPDATE sales_report
 
 &nbsp;
 
-#### 2.2 : Aggregating all product data in database
+### 2.2 : Aggregating all product data in database
 
 ```SQL
 -- aggregate product data from products and sales_report
@@ -690,11 +689,10 @@ CREATE TABLE all_products_3 AS (
 
 &nbsp;
 ---
-# SECTION 3 : normalizing ids
+## SECTION 3 : Normalizing ids
 ### Purpose
 -  merging and aggregating fullvisitorid and visit id from sessions_2 (AKA all_sessions) and analysis tables
 
-&nbsp;
 
 ```SQL
 -- merge fullvisitorid - visitid combinations
@@ -731,7 +729,7 @@ CREATE TABLE sessions_3 AS (
 
 &nbsp;
 ---
-# SECTION 4 : Finalizing table names and columns
+## SECTION 4 : Finalizing table names and columns
 
 &nbsp;
 
@@ -1012,7 +1010,7 @@ CREATE TABLE session_analytics AS (
 
 &nbsp;
 ---
-# SECTION 5 : Assigning PK & FK constraints
+## SECTION 5 : Assigning PK & FK constraints
 
 &nbsp;
 
