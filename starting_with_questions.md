@@ -2,7 +2,7 @@
 ---
 &nbsp;
     
-# Question 1: Which cities and countries have the highest level of transaction revenues on the site?
+## Question 1: Which cities and countries have the highest level of transaction revenues on the site?
 
 ### SQL Queries:
 ```SQL
@@ -63,7 +63,7 @@ SELECT * FROM q1_totaltransactionrevenue_ranked_by_city;
 
 &nbsp;
 
-# Question 2: What is the average number of products ordered from visitors in each city and country?
+## Question 2: What is the average number of products ordered from visitors in each city and country?
 
 ### SQL Queries:
 ```SQL
@@ -125,7 +125,7 @@ SELECT * FROM q2_avg_orderquantity_by_city;
 
 &nbsp;
 
-# Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?
+## Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?
 
 
 ### SQL Queries:
@@ -224,7 +224,7 @@ SELECT * FROM q3_top_ordercategories_by_city;
 
 &nbsp;
 
-# Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?
+## Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?
 
 
 ### SQL Queries:
@@ -329,7 +329,7 @@ SELECT * FROM q4_top_selling_products_by_city;
 
 &nbsp;
 
-# Question 5: Can we summarize the impact of revenue generated from each city/country?
+## Question 5: Can we summarize the impact of revenue generated from each city/country?
 
 ### SQL Queries:
 ```SQL

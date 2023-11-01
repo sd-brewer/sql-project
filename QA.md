@@ -10,7 +10,7 @@
 
 &nbsp;
 
-## RISK 1 : Revenue values from session_transactions may differ from session_analytics
+## Risk 1 : Revenue values from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 - explore how session_transactions.totaltransactionrevenue differs from session_analytics.revenue
@@ -86,12 +86,12 @@ SELECT * FROM qa1_aggregated_revenue_variance;
 
 &nbsp;
 
-## RISK 2 : Product quantities from session_transactions may differ from session_analytics
+## Risk 2 : Product quantities from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 ```SQL
 -- sa_quantity can have multiple values for a given sessionid - st_quantity match
--- assume that sa_quantity must be aggregated similar to sa_revenue based on FINDINGS from 'RISK 1'
+-- assume that sa_quantity must be aggregated similar to sa_revenue based on FINDINGS from 'Risk 1'
 CREATE OR REPLACE VIEW qa2_productquantity_variance AS (
 	SELECT
 		sessionid,
@@ -120,12 +120,12 @@ SELECT * FROM qa2_productquantity_variance;
 
 &nbsp;
 
-## RISK 3 : Product prices from session_transactions may differ from session_analytics
+## Risk 3 : Product prices from session_transactions may differ from session_analytics
 
 ### SQL Queries:
 ```SQL
 -- sa_price can have multiple values for a given sessionid - st_price match
--- assume that sa_price must be approriately aggregated similar to sa_revenue based on FINDINGS from 'RISK 1'
+-- assume that sa_price must be approriately aggregated similar to sa_revenue based on FINDINGS from 'Risk 1'
 CREATE OR REPLACE VIEW qa3_productprice_variance AS (
 	SELECT
 		sessionid,
@@ -155,7 +155,7 @@ SELECT * FROM qa3_productprice_variance;
 
 &nbsp;
 
-## RISK 4 : Sales quantities from session_transactions may differ from product_sales
+## Risk 4 : Sales quantities from session_transactions may differ from product_sales
 
 ### SQL Queries:
 ```SQL
